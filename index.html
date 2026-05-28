@@ -17,6 +17,10 @@
     content="Free VIT GPA & CGPA Calculator with target GPA prediction, semester tracking, and instant grade calculation for VIT students." />
   <meta name="keywords"
     content="VIT GPA Calculator, VIT CGPA Calculator, VIT GPA predictor, VIT grade calculator, GradeOS, VIT Chennai GPA Calculator" />
+
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="canonical" href="https://gradeos-seven.vercel.app/" />
+
   <meta property="og:title" content="GradeOS | VIT GPA & CGPA Calculator" />
   <meta property="og:description" content="Calculate GPA, CGPA, and predict target scores instantly using GradeOS." />
   <meta property="og:type" content="website" />
@@ -180,11 +184,19 @@
   </div>
 
   <header class="max-w-5xl mx-auto px-4 sm:px-6 mb-6 text-center">
-    <h1 class="text-3xl sm:text-5xl font-black tracking-tight mb-6">
-      Calculate Your <span
-        class="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 bg-clip-text text-transparent">GPA &
-        CGPA</span> Instantly.
+    <h1 class="text-4xl sm:text-6xl font-black tracking-tight leading-tight mb-6">
+      Calculate Your
+      <span class="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 bg-clip-text text-transparent">
+        GPA & CGPA
+      </span>
+      Instantly.
     </h1>
+
+    <p class="max-w-2xl mx-auto text-slate-400 text-sm sm:text-lg leading-7 mb-8">
+      Modern GPA calculator for VIT students with semester GPA tracking,
+      CGPA prediction, and instant grade calculations.
+    </p>
+
     <div class="inline-flex gap-2 glass rounded-2xl p-1 mx-auto">
       <button id="gpa-tab" onclick="switchTab('gpa')"
         class="tab-active px-4 sm:px-5 py-2.5 sm:py-3 rounded-xl text-sm font-semibold transition">
@@ -212,9 +224,7 @@
             <h2 id="credits-display" class="text-3xl sm:text-5xl font-black text-cyan-400 tracking-tight">0</h2>
           </div>
         </div>
-
       </div>
-
 
       <div id="cgpa-sticky-score" class="hidden glass rounded-2xl p-4 sm:p-6 overflow-hidden relative">
         <div class="absolute inset-0 bg-gradient-to-br from-purple-500/[0.04] to-pink-500/[0.02]"></div>
@@ -230,6 +240,7 @@
         </div>
       </div>
     </div>
+
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-6 relative z-10">
       <button onclick="copyResult()" class="glass hover:bg-white/10 transition rounded-2xl py-3 font-semibold text-sm">
         Copy Result
@@ -243,6 +254,7 @@
         Download Result
       </button>
     </div>
+
     <section id="gpa-view" class="space-y-6">
       <div class="glass rounded-[24px] sm:rounded-[32px] p-4 sm:p-8">
         <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6">
@@ -362,16 +374,19 @@
         </div>
       </div>
     </section>
-    <h2 class="text-2xl font-bold mb-4">
-      VIT GPA & CGPA Calculator
-    </h2>
 
-    <p class="text-slate-400 leading-8">
-      GradeOS helps VIT students calculate GPA, CGPA, and required target GPA instantly.
-      The calculator supports semester GPA tracking, cumulative CGPA calculation,
-      and future GPA prediction for placements and academic planning.
-    </p>
-
+    <section class="max-w-5xl mx-auto mt-16">
+      <div class="glass rounded-[32px] p-8">
+        <h2 class="text-2xl font-bold mb-4">
+          VIT GPA & CGPA Calculator
+        </h2>
+        <p class="text-slate-400 leading-8">
+          GradeOS helps VIT students calculate GPA, CGPA, and required target GPA instantly.
+          The calculator supports semester GPA tracking, cumulative CGPA calculation,
+          and future GPA prediction for placements and academic planning.
+        </p>
+      </div>
+    </section>
 
     <section class="mt-16 glass rounded-[32px] p-8 max-w-5xl mx-auto">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -654,13 +669,13 @@
       }
       document.body.removeChild(textarea);
     }
-
+    // WhatsApp share
     function shareWhatsapp() {
       const isGpa = !document.getElementById('gpa-view').classList.contains('hidden');
       const score = isGpa ? document.getElementById('gpa-display').innerText : document.getElementById('cgpa-display').innerText;
       const shareText = `I calculated my GPA instantly using GradeOS: ${score}`;
       const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(shareText)}`;
-      window.open(whatsappUrl, '_blank');
+      window.location.href = whatsappUrl;
     }
 
     function downloadImage() {
