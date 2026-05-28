@@ -12,9 +12,11 @@
   <meta name="google-site-verification" content="SrjQ-rs6iuV8pBQTSAA4Wk0lZAjYHrrnnSCFVX8V7kU" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GradeOS | VIT GPA & CGPA Calculator</title>
-  <meta name="description" content="Modern VIT GPA & CGPA Calculator with target GPA prediction, semester tracking, and instant calculations." />
-  <meta name="keywords" content="VIT GPA Calculator, VIT CGPA Calculator, GPA Predictor, CGPA Calculator, GradeOS" />
+  <title>VIT GPA & CGPA Calculator | GradeOS</title>
+  <meta name="description"
+    content="Free VIT GPA & CGPA Calculator with target GPA prediction, semester tracking, and instant grade calculation for VIT students." />
+  <meta name="keywords"
+    content="VIT GPA Calculator, VIT CGPA Calculator, VIT GPA predictor, VIT grade calculator, GradeOS, VIT Chennai GPA Calculator" />
   <meta property="og:title" content="GradeOS | VIT GPA & CGPA Calculator" />
   <meta property="og:description" content="Calculate GPA, CGPA, and predict target scores instantly using GradeOS." />
   <meta property="og:type" content="website" />
@@ -111,8 +113,13 @@
     }
 
     @keyframes float {
-      0% { transform: translateY(0px) translateX(0px); }
-      100% { transform: translateY(-30px) translateX(15px); }
+      0% {
+        transform: translateY(0px) translateX(0px);
+      }
+
+      100% {
+        transform: translateY(-30px) translateX(15px);
+      }
     }
 
     .gpa-glow {
@@ -139,9 +146,17 @@
       transition: border-color 0.3s ease, transform 0.2s ease;
     }
 
-    .weight-heavy { border-left: 4px solid #a855f7 !important; }
-    .weight-medium { border-left: 4px solid #3b82f6 !important; }
-    .weight-light { border-left: 4px solid #06b6d4 !important; }
+    .weight-heavy {
+      border-left: 4px solid #a855f7 !important;
+    }
+
+    .weight-medium {
+      border-left: 4px solid #3b82f6 !important;
+    }
+
+    .weight-light {
+      border-left: 4px solid #06b6d4 !important;
+    }
 
     input::-webkit-outer-spin-button,
     input::-webkit-inner-spin-button {
@@ -166,13 +181,17 @@
 
   <header class="max-w-5xl mx-auto px-4 sm:px-6 mb-6 text-center">
     <h1 class="text-3xl sm:text-5xl font-black tracking-tight mb-6">
-      Calculate Your <span class="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 bg-clip-text text-transparent">GPA & CGPA</span> Instantly.
+      Calculate Your <span
+        class="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 bg-clip-text text-transparent">GPA &
+        CGPA</span> Instantly.
     </h1>
     <div class="inline-flex gap-2 glass rounded-2xl p-1 mx-auto">
-      <button id="gpa-tab" onclick="switchTab('gpa')" class="tab-active px-4 sm:px-5 py-2.5 sm:py-3 rounded-xl text-sm font-semibold transition">
+      <button id="gpa-tab" onclick="switchTab('gpa')"
+        class="tab-active px-4 sm:px-5 py-2.5 sm:py-3 rounded-xl text-sm font-semibold transition">
         GPA Calculator
       </button>
-      <button id="cgpa-tab" onclick="switchTab('cgpa')" class="px-4 sm:px-5 py-2.5 sm:py-3 rounded-xl text-sm text-slate-400 transition">
+      <button id="cgpa-tab" onclick="switchTab('cgpa')"
+        class="px-4 sm:px-5 py-2.5 sm:py-3 rounded-xl text-sm text-slate-400 transition">
         CGPA Calculator
       </button>
     </div>
@@ -193,9 +212,9 @@
             <h2 id="credits-display" class="text-3xl sm:text-5xl font-black text-cyan-400 tracking-tight">0</h2>
           </div>
         </div>
-        
+
       </div>
-      
+
 
       <div id="cgpa-sticky-score" class="hidden glass rounded-2xl p-4 sm:p-6 overflow-hidden relative">
         <div class="absolute inset-0 bg-gradient-to-br from-purple-500/[0.04] to-pink-500/[0.02]"></div>
@@ -211,22 +230,25 @@
         </div>
       </div>
     </div>
-<div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-6 relative z-10">
-          <button onclick="copyResult()" class="glass hover:bg-white/10 transition rounded-2xl py-3 font-semibold text-sm">
-            Copy Result
-          </button>
-          <button onclick="shareWhatsapp()" class="bg-gradient-to-r from-emerald-500 to-green-500 hover:opacity-90 transition rounded-2xl py-3 font-semibold text-sm">
-            Share WhatsApp
-          </button>
-          <button onclick="downloadImage()" class="bg-gradient-to-r from-cyan-500 to-blue-500 hover:opacity-90 transition rounded-2xl py-3 font-semibold text-sm">
-            Download Result
-          </button>
-        </div>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-6 relative z-10">
+      <button onclick="copyResult()" class="glass hover:bg-white/10 transition rounded-2xl py-3 font-semibold text-sm">
+        Copy Result
+      </button>
+      <button onclick="shareWhatsapp()"
+        class="bg-gradient-to-r from-emerald-500 to-green-500 hover:opacity-90 transition rounded-2xl py-3 font-semibold text-sm">
+        Share WhatsApp
+      </button>
+      <button onclick="downloadImage()"
+        class="bg-gradient-to-r from-cyan-500 to-blue-500 hover:opacity-90 transition rounded-2xl py-3 font-semibold text-sm">
+        Download Result
+      </button>
+    </div>
     <section id="gpa-view" class="space-y-6">
       <div class="glass rounded-[24px] sm:rounded-[32px] p-4 sm:p-8">
         <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6">
           <h2 class="text-lg sm:text-xl font-bold tracking-tight">Courses</h2>
-          <button onclick="addInteractiveRow()" class="w-full sm:w-auto bg-gradient-to-r from-cyan-500 to-blue-500 hover:opacity-90 text-white font-semibold px-5 py-3 rounded-2xl transition shadow-lg text-sm">
+          <button onclick="addInteractiveRow()"
+            class="w-full sm:w-auto bg-gradient-to-r from-cyan-500 to-blue-500 hover:opacity-90 text-white font-semibold px-5 py-3 rounded-2xl transition shadow-lg text-sm">
             + Add Course
           </button>
         </div>
@@ -243,27 +265,32 @@
               <div class="flex flex-col sm:flex-row gap-3 p-4 rounded-2xl bg-white/[0.02] border border-white/5">
                 <div class="flex-1">
                   <label class="text-xs font-semibold text-slate-400 block mb-1.5">Current CGPA</label>
-                  <input id="currentCgpa" type="number" step="0.01" placeholder="Current CGPA" class="input rounded-xl px-4 py-3 w-full text-sm" oninput="predictGpa()" />
+                  <input id="currentCgpa" type="number" step="0.01" placeholder="Current CGPA"
+                    class="input rounded-xl px-4 py-3 w-full text-sm" oninput="predictGpa()" />
                 </div>
                 <div class="flex-1">
                   <label class="text-xs font-semibold text-slate-400 block mb-1.5">Completed Credits</label>
-                  <input id="completedCredits" type="number" placeholder="Completed Credits" class="input rounded-xl px-4 py-3 w-full text-sm" oninput="predictGpa()" />
+                  <input id="completedCredits" type="number" placeholder="Completed Credits"
+                    class="input rounded-xl px-4 py-3 w-full text-sm" oninput="predictGpa()" />
                 </div>
               </div>
               <div class="flex flex-col sm:flex-row gap-3 p-4 rounded-2xl bg-white/[0.05] border border-white/5">
                 <div class="flex-1">
                   <label class="text-xs font-semibold text-slate-400 block mb-1.5">Target CGPA</label>
-                  <input id="targetCgpa" type="number" step="0.01" placeholder="Target CGPA" class="input rounded-xl px-4 py-3 w-full text-sm" oninput="predictGpa()" />
+                  <input id="targetCgpa" type="number" step="0.01" placeholder="Target CGPA"
+                    class="input rounded-xl px-4 py-3 w-full text-sm" oninput="predictGpa()" />
                 </div>
                 <div class="flex-1">
                   <label class="text-xs font-semibold text-slate-400 block mb-1.5">Upcoming Credits</label>
-                  <input id="futureCredits" type="number" placeholder="Upcoming Credits" class="input rounded-xl px-4 py-3 w-full text-sm" oninput="predictGpa()" />
+                  <input id="futureCredits" type="number" placeholder="Upcoming Credits"
+                    class="input rounded-xl px-4 py-3 w-full text-sm" oninput="predictGpa()" />
                 </div>
               </div>
             </div>
           </div>
           <div class="mt-6">
-            <button onclick="predictGpa()" class="w-full bg-gradient-to-r from-cyan-500 to-blue-500 py-3.5 rounded-2xl font-semibold text-white text-sm hover:opacity-90 transition">
+            <button onclick="predictGpa()"
+              class="w-full bg-gradient-to-r from-cyan-500 to-blue-500 py-3.5 rounded-2xl font-semibold text-white text-sm hover:opacity-90 transition">
               Calculate Required GPA
             </button>
             <div class="mt-4 glass rounded-2xl p-4 text-center bg-cyan-500/[0.01]">
@@ -280,27 +307,32 @@
               <div class="flex flex-col sm:flex-row gap-3 p-4 rounded-2xl bg-white/[0.02] border border-white/5">
                 <div class="flex-1">
                   <label class="text-xs font-semibold text-slate-400 block mb-1.5">Completed Credits</label>
-                  <input id="quick-completed-credits" type="number" placeholder="Completed Credits" class="input rounded-xl px-4 py-3 w-full text-sm" oninput="calculateQuickCgpa()" />
+                  <input id="quick-completed-credits" type="number" placeholder="Completed Credits"
+                    class="input rounded-xl px-4 py-3 w-full text-sm" oninput="calculateQuickCgpa()" />
                 </div>
                 <div class="flex-1">
                   <label class="text-xs font-semibold text-slate-400 block mb-1.5">Current CGPA</label>
-                  <input id="quick-completed-cgpa" type="number" step="0.01" placeholder="Current CGPA" class="input rounded-xl px-4 py-3 w-full text-sm" oninput="calculateQuickCgpa()" />
+                  <input id="quick-completed-cgpa" type="number" step="0.01" placeholder="Current CGPA"
+                    class="input rounded-xl px-4 py-3 w-full text-sm" oninput="calculateQuickCgpa()" />
                 </div>
               </div>
               <div class="flex flex-col sm:flex-row gap-3 p-4 rounded-2xl bg-white/[0.05] border border-white/5">
                 <div class="flex-1">
                   <label class="text-xs font-semibold text-slate-400 block mb-1.5">Semester Credits</label>
-                  <input id="quick-sem-credits" type="number" placeholder="Semester Credits" class="input rounded-xl px-4 py-3 w-full text-sm" oninput="calculateQuickCgpa()" />
+                  <input id="quick-sem-credits" type="number" placeholder="Semester Credits"
+                    class="input rounded-xl px-4 py-3 w-full text-sm" oninput="calculateQuickCgpa()" />
                 </div>
                 <div class="flex-1">
                   <label class="text-xs font-semibold text-slate-400 block mb-1.5">Semester GPA</label>
-                  <input id="quick-sem-gpa" type="number" step="0.01" placeholder="Semester GPA" class="input rounded-xl px-4 py-3 w-full text-sm" oninput="calculateQuickCgpa()" />
+                  <input id="quick-sem-gpa" type="number" step="0.01" placeholder="Semester GPA"
+                    class="input rounded-xl px-4 py-3 w-full text-sm" oninput="calculateQuickCgpa()" />
                 </div>
               </div>
             </div>
           </div>
           <div class="mt-6">
-            <button onclick="calculateQuickCgpa()" class="w-full bg-gradient-to-r from-purple-500 to-pink-500 py-3.5 rounded-2xl font-semibold text-white text-sm hover:opacity-90 transition">
+            <button onclick="calculateQuickCgpa()"
+              class="w-full bg-gradient-to-r from-purple-500 to-pink-500 py-3.5 rounded-2xl font-semibold text-white text-sm hover:opacity-90 transition">
               Calculate Combined CGPA
             </button>
             <div class="mt-4 glass rounded-2xl p-4 text-center bg-purple-500/[0.01]">
@@ -315,7 +347,8 @@
         <div>
           <div class="flex items-center justify-between mb-6">
             <h2 class="text-xl font-bold">Semester Log</h2>
-            <button onclick="addSemRow()" class="bg-purple-500/20 text-purple-400 border border-purple-500/30 hover:bg-purple-500/30 text-xs font-semibold px-4 py-2 rounded-xl transition">
+            <button onclick="addSemRow()"
+              class="bg-purple-500/20 text-purple-400 border border-purple-500/30 hover:bg-purple-500/30 text-xs font-semibold px-4 py-2 rounded-xl transition">
               + Add Sem
             </button>
           </div>
@@ -329,19 +362,31 @@
         </div>
       </div>
     </section>
+    <h2 class="text-2xl font-bold mb-4">
+      VIT GPA & CGPA Calculator
+    </h2>
+
+    <p class="text-slate-400 leading-8">
+      GradeOS helps VIT students calculate GPA, CGPA, and required target GPA instantly.
+      The calculator supports semester GPA tracking, cumulative CGPA calculation,
+      and future GPA prediction for placements and academic planning.
+    </p>
+
 
     <section class="mt-16 glass rounded-[32px] p-8 max-w-5xl mx-auto">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div>
           <h3 class="text-xl font-bold mb-3 text-cyan-400">How GPA is Calculated</h3>
           <p class="text-slate-400 text-sm leading-7">
-            GPA is calculated using credit-weighted grade points for each subject. Higher grades in high-credit courses improve GPA significantly.
+            GPA is calculated using credit-weighted grade points for each subject. Higher grades in high-credit courses
+            improve GPA significantly.
           </p>
         </div>
         <div>
           <h3 class="text-xl font-bold mb-3 text-blue-400">How CGPA Works</h3>
           <p class="text-slate-400 text-sm leading-7">
-            CGPA combines GPA scores from all semesters into one cumulative score. It reflects overall academic performance across your degree.
+            CGPA combines GPA scores from all semesters into one cumulative score. It reflects overall academic
+            performance across your degree.
           </p>
         </div>
         <div>
